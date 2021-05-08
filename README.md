@@ -38,3 +38,6 @@ To test with the bot yourself create a .env file on the base level of the projec
     DB_PW_ROOT=Your Database Root Password
 
 You will also need to set the root password in the init_db.sh as well as user credentials and db name in init_db.sql.
+
+# Getting the bot
+You can get the release version of the bot for your Discord server here: https://discord.com/oauth2/authorize?client_id=783284735064801300&scope=bot&permissions=134208
