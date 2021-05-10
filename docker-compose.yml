@@ -31,6 +31,8 @@ services:
       - DB_AUTOCOMMIT=${DB_AUTOCOMMIT}
       - DB_PORT=${DB_PORT}
       - DB_PW_ROOT=${DB_PW_ROOT}
+      - TOP_GG_BOT_ID=${TOP_GG_BOT_ID}
+      - TOP_GG_BOT_TOKEN=${TOP_GG_BOT_TOKEN}
 networks:
   banshee:
     external: 

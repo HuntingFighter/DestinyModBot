@@ -99,16 +99,16 @@ def getActiveModIdsAda():
     return cursor.fetchall()
 
 
-def setActiveModsBanshee(mod1, mod2):
+def setActiveModsBanshee(newMods):
     cursor.execute("DELETE FROM current_mods WHERE vendor = 'Banshee'")
-    cursor.execute("INSERT INTO current_mods (mod_id, vendor) VALUES (%(mod_id)s, 'Banshee')", { 'mod_id': mod1 })
-    cursor.execute("INSERT INTO current_mods (mod_id, vendor) VALUES (%(mod_id)s, 'Banshee')", { 'mod_id': mod2 })
+    for mod in newMods:
+        cursor.execute("INSERT INTO current_mods (mod_id, vendor) VALUES (%(mod_id)s, 'Banshee')", { 'mod_id': mod["itemHash"] })
 
 
-def setActiveModsAda(mod1, mod2):
+def setActiveModsAda(newMods):
     cursor.execute("DELETE FROM current_mods WHERE vendor = 'Ada'")
-    cursor.execute("INSERT INTO current_mods (mod_id, vendor) VALUES (%(mod_id)s, 'Ada')", { 'mod_id': mod1 })
-    cursor.execute("INSERT INTO current_mods (mod_id, vendor) VALUES (%(mod_id)s, 'Ada')", { 'mod_id': mod2 })
+    for mod in newMods:
+        cursor.execute("INSERT INTO current_mods (mod_id, vendor) VALUES (%(mod_id)s, 'Ada')", { 'mod_id': mod["itemHash"] })
 
 
 def getWishesChannel(server_id):
